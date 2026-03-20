@@ -1,117 +1,98 @@
-/* Reset spacing */
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #eef2f7;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9; /* Soft light grey/blue */
+    color: #2d3436;
+    line-height: 1.8;
 }
 
-/* Header */
-header {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+/* Banner / Hero Section */
+.banner {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep professional gradient */
     color: white;
-    padding: 35px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-header h1{
-    font-size: 32px;
+.banner h1 {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
-/* Navigation bar */
+.banner p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Horizontal Navigation */
 nav {
     background-color: #1b263b;
-    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Navigation container */
-nav {
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
 }
 
-/* Navigation links */
 nav a {
-    color: white;
+    color: #e0e0e0;
     text-decoration: none;
-    font-weight: bold;
-    padding: 8px 14px;
-    border-radius: 4px;
+    font-weight: 500;
+    padding: 15px 25px;
+    transition: all 0.3s ease;
 }
 
-/* Hover effect */
-nav a:hover {
+nav a:hover, nav a.active {
     background-color: #415a77;
+    color: white;
 }
 
-/* Hover effect */
-nav a:hover {
-    background-color: #415a77;
-}
-
-/* Main content */
+/* Main Content Area */
 main {
-    max-width: 1100px;
+    max-width: 900px;
     margin: 40px auto;
-    padding: 30px;
+    padding: 40px;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* Headings */
 h2 {
-    margin-top: 25px;
-    margin-bottom: 10px;
-    color: #1e3c72;
-}
-
-/* Paragraph spacing */
-p {
+    color: #0f2027;
+    border-bottom: 2px solid #eef2f7;
+    padding-bottom: 10px;
+    margin-top: 30px;
     margin-bottom: 15px;
 }
 
-/* Lists */
 ul {
-    margin-left: 20px;
+    margin-left: 25px;
     margin-bottom: 20px;
 }
 
-/* Images */
-img {
-    max-width: 100%;
-    margin: 20px 0;
-    border-radius: 6px;
+li {
+    margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
     background-color: #1b263b;
-    color: white;
+    color: #bdc3c7;
     text-align: center;
-    padding: 18px;
-    margin-top: 40px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-
-    nav a{
-        display: block;
-        margin: 8px 0;
-    }
-
-    main{
-        margin: 20px;
-        padding: 20px;
-    }
-
+    padding: 30px;
+    margin-top: 60px;
+    font-size: 0.9rem;
 }
