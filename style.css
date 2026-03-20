@@ -97,22 +97,23 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Mobile Optimization - Media Query */
 @media (max-width: 768px) {
     .banner h1 {
-        font-size: 1.8rem; /* Scaled down further for narrow phones */
+        font-size: 1.8rem;
     }
 
     .nav-container {
-        flex-direction: column; 
-        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* Allows links to move to a second row if needed */
+        justify-content: center;
+        padding: 5px;
     }
 
     nav a {
-        display: block; /* Ensures the link takes up the whole row */
+        padding: 10px 8px; /* Much smaller padding to save space */
+        font-size: 13px;    /* Smaller font for mobile screens */
+        flex: 1 1 auto;    /* Helps them distribute evenly */
         text-align: center;
-        padding: 15px;
-        border-bottom: 1px solid #2c3e50;
     }
 
     main {
