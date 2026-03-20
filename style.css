@@ -95,7 +95,7 @@ footer {
     padding: 30px;
     margin-top: 60px;
     font-size: 0.9rem;
-
+}
 /* Mobile Optimization for your Report Screenshots */
 @media (max-width: 768px) {
     .banner {
@@ -121,6 +121,4 @@ footer {
         margin: 20px;
         padding: 20px;
     }
-}
-
 }
