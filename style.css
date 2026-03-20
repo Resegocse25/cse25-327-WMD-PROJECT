@@ -7,14 +7,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f9; /* Soft light grey/blue */
+    background-color: #f4f7f9;
     color: #2d3436;
     line-height: 1.8;
 }
 
 /* Banner / Hero Section */
 .banner {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep professional gradient */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
     padding: 60px 20px;
     text-align: center;
@@ -96,29 +96,27 @@ footer {
     margin-top: 60px;
     font-size: 0.9rem;
 }
-/* Mobile Optimization for your Report Screenshots */
-@media (max-width: 768px) {
-    .banner {
-        padding: 40px 15px;
-    }
 
+/* Mobile Optimization - Media Query */
+@media (max-width: 768px) {
     .banner h1 {
-        font-size: 2rem; /* Shrinks the title so it doesn't wrap weirdly */
+        font-size: 1.8rem; /* Scaled down further for narrow phones */
     }
 
     .nav-container {
-        flex-direction: column; /* Stacks the links vertically for easy tapping */
-        text-align: center;
-    }
-
-    nav a {
-        padding: 12px;
-        border-bottom: 1px solid #2c3e50; /* Adds a subtle separator */
+        flex-direction: column; 
         width: 100%;
     }
 
+    nav a {
+        display: block; /* Ensures the link takes up the whole row */
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid #2c3e50;
+    }
+
     main {
-        margin: 20px;
+        margin: 15px;
         padding: 20px;
     }
 }
