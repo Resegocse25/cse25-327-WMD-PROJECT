@@ -95,4 +95,32 @@ footer {
     padding: 30px;
     margin-top: 60px;
     font-size: 0.9rem;
+
+/* Mobile Optimization for your Report Screenshots */
+@media (max-width: 768px) {
+    .banner {
+        padding: 40px 15px;
+    }
+
+    .banner h1 {
+        font-size: 2rem; /* Shrinks the title so it doesn't wrap weirdly */
+    }
+
+    .nav-container {
+        flex-direction: column; /* Stacks the links vertically for easy tapping */
+        text-align: center;
+    }
+
+    nav a {
+        padding: 12px;
+        border-bottom: 1px solid #2c3e50; /* Adds a subtle separator */
+        width: 100%;
+    }
+
+    main {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
 }
