@@ -26,7 +26,7 @@
 </header>
 
 <main>
-    <h2>Student Feedback Form</h2>
+    <!-- <h2>Student Feedback Form</h2>
     <p>Have a study method that works for you? Or a suggestion for the site? Let us know below.</p>
 
     <form action="#" method="post" class="feedback-form">
@@ -57,7 +57,33 @@
         </div>
 
         <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form> -->
+
+    <section class="feedback-section">
+    <h2>We'd Love to Hear From You!</h2>
+    <p>Please share your thoughts on how we can improve our routines and study advice.</p>
+
+    <form action="#" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
+        <br><br>
+
+        <label for="category">Topic:</label><br>
+        <select id="category" name="category">
+            <option value="general">General Feedback</option>
+            <option value="routines">Daily Routines</option>
+            <option value="study">Study Habits</option>
+            <option value="time">Time Management</option>
+        </select>
+        <br><br>
+
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" rows="5" required placeholder="How can we help?"></textarea>
+        <br><br>
+
+        <button type="submit" class="btn-submit">Send Feedback</button>
     </form>
+</section>
 </main>
 
 <footer>
