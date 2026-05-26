@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* 1. Reset & Base measurments and sizes */
 * {
     margin: 0;
     padding: 0;
@@ -12,26 +12,66 @@ body {
     line-height: 1.8;
 }
 
-/* Banner / Hero Section */
-.banner {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
+/*2. Header & Banner Sections (With Contrast Overlays) */
+/* The base banner setup handles layout and text sizing */
+header.banner, .banner {
+    color: #ffffff !important; /* the fix for banner text darkening */
     padding: 60px 20px;
     text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
-.banner h1 {
+header.banner h1, .banner h1 {
     font-size: 3rem;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* to increase backround darkness so banner text can be more visible */
 }
 
-.banner p {
+header.banner p, .banner p {
     font-style: italic;
-    opacity: 0.9;
+    opacity: 0.95;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-/* Horizontal Navigation */
+/* Homepage Background: Linear-gradient for adding a tint */
+header.banner:not([class*="banner-"]), .banner:not([class*="banner-"]) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                      url('images/index-banner.jpg');
+}
+
+/* Routines backgroung */
+.banner-routines {
+    background-image: linear-gradient(135deg, rgba(15, 32, 39, 0.85), rgba(26, 58, 74, 0.85));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/routines-banner.jpg'); 
+}
+
+.banner-study {
+    background-image: linear-gradient(135deg, rgba(15, 32, 39, 0.85), rgba(42, 26, 74, 0.85));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/study-banner (3).jpg'); 
+}
+
+.banner-time {
+    background-image: linear-gradient(135deg, rgba(15, 32, 39, 0.85), rgba(58, 42, 26, 0.85));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/time-banner.jpg'); 
+}
+
+.banner-feedback {
+    background-image: linear-gradient(135deg, rgba(15, 32, 39, 0.85), rgba(26, 58, 42, 0.85));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/feedback-banner.jpg'); 
+}
+
+.banner-about {
+    background-image: linear-gradient(135deg, rgba(15, 32, 39, 0.85), rgba(26, 42, 58, 0.85));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/about-banner.jpg'); 
+}
+
+/*3. Horizontal Navigation Bar */
 nav {
     background-color: #1b263b;
     position: sticky;
@@ -53,14 +93,22 @@ nav a {
     font-weight: 500;
     padding: 15px 25px;
     transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    text-align: center;
 }
 
-nav a:hover, nav a.active {
+nav a:hover {
     background-color: #415a77;
     color: white;
 }
 
-/* Main Content Area */
+nav a.active {
+    background-color: #415a77;
+    color: white;
+    border-bottom: 3px solid #4a9eda;
+}
+
+/*4. Main Content Area*/
 main {
     max-width: 900px;
     margin: 40px auto;
@@ -70,12 +118,24 @@ main {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
+h1 {
+    color: #0f2027;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 h2 {
     color: #0f2027;
     border-bottom: 2px solid #eef2f7;
     padding-bottom: 10px;
     margin-top: 30px;
     margin-bottom: 15px;
+}
+
+h3 {
+    color: #2c5364;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 ul {
@@ -87,42 +147,122 @@ li {
     margin-bottom: 10px;
 }
 
-/* Footer */
-footer {
-    background-color: #1b263b;
-    color: #bdc3c7;
+p {
+    margin-bottom: 15px;
+}
+
+/*5. Media & Layout Elements */
+.featured-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+figcaption {
     text-align: center;
-    padding: 30px;
-    margin-top: 60px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 6px;
+    font-style: italic;
 }
 
-@media (max-width: 768px) {
-    .banner h1 {
-        font-size: 1.8rem;
-    }
-
-    .nav-container {
-        display: flex;
-        flex-wrap: wrap; /* Allows links to move to a second row if needed */
-        justify-content: center;
-        padding: 5px;
-    }
-
-    nav a {
-        padding: 10px 8px; /* Much smaller padding to save space */
-        font-size: 13px;    /* Smaller font for mobile screens */
-        flex: 1 1 auto;    /* Helps them distribute evenly */
-        text-align: center;
-    }
-
-    main {
-        margin: 15px;
-        padding: 20px;
-    }
+/* Video Component Layouts */
+.video-card {
+    background: #eef4fb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 1px solid #dde3ea;
 }
 
-/* Feedback Form Styling */
+.video-card h3 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.4rem;
+    color: #0f2027;
+}
+
+.video-card p {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Sidebar Resources / Links Styling */
+.resources-section {
+    background: #eaf2fb;
+    border-left: 4px solid #4a9eda;
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+}
+
+.resources-section h3 {
+    margin-top: 0;
+    color: #0f2027;
+    margin-bottom: 0.75rem;
+}
+
+.resources-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.resources-section li {
+    margin-bottom: 0.5rem;
+}
+
+.resources-section li::before {
+    content: "→ ";
+    color: #4a9eda;
+    font-weight: bold;
+}
+
+.resources-section a {
+    color: #2c5364;
+    text-decoration: none;
+}
+
+.resources-section a:hover {
+    text-decoration: underline;
+}
+
+/*6. Feedback Form System Layout*/
 .feedback-form {
     display: flex;
     flex-direction: column;
@@ -141,14 +281,27 @@ footer {
     color: #1b263b;
 }
 
-.form-group input, 
-.form-group select, 
+.form-group input,
+.form-group select,
 .form-group textarea {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
     width: 100%;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2c5364;
+    box-shadow: 0 0 0 3px rgba(44, 83, 100, 0.15);
+}
+
+.required-star {
+    color: #e74c3c;
 }
 
 .submit-btn {
@@ -159,9 +312,49 @@ footer {
     border-radius: 6px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .submit-btn:hover {
     background-color: #1b263b;
+    transform: translateY(-2px);
+}
+
+/*7. Footer Section*/
+footer {
+    background-color: #1b263b;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+/*8. Responsive Design Overrides (Mobile Breakpoints)*/
+@media (max-width: 768px) {
+    header.banner h1, .banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    nav a {
+        padding: 10px 8px;
+        font-size: 13px;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
 }
